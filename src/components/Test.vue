@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>{{ text }}</h1>
-		<div>Test clicked {{ click }}</div>
+		<div>{{ clickedTimes }}</div>
 		<button @click="clickCount()">Посчитать клики</button>
 		<br />
 		<router-link to="/">Go home</router-link>
@@ -17,34 +17,53 @@ export default {
 			click: 0,
 		};
 	},
+	computed: {
+		clickedTimes() {
+			// Будет обновляться каждый раз при изменении click
+			return `Кнопка была нажата ${this.click} раз!`
+		},
+	},
+	watch: {
+		click: function(newVal, oldVal) {
+			// Смотрим 2 значние: новое и старое
+			console.log('oldVal', oldVal)
+			console.log('newVal', newVal)
+		},
+		clickedTimes: function(newVal) {
+			// Смотрим только новое значение
+			console.log('newVal', newVal)
+		}
+	},
 	methods: {
 		clickCount() {
 			return (this.click += 1);
 		},
 	},
-	beforeCreate() {
-		console.log('beforeCreate', 1);
-	},
-	created() {
-		console.log('created', 2);
-	},
-	beforeMount() {
-		console.log('beforeMount', 3);
-	},
+	// beforeCreate() {
+	// 	console.log('beforeCreate', 1);
+	// },
+	// created() {
+	// 	console.log('created', 2);
+	// },
+	// beforeMount() {
+	// 	console.log('beforeMount', 3);
+	// },
 	mounted() {
-		console.log('mounted', 4);
+		console.log('Mounted', this);
+		// console.log('mounted', 4);
 	},
-	beforeUpdate() {
-		console.log('beforeUpdate', 5);
-	},
+	// beforeUpdate() {
+	// 	console.log('beforeUpdate', 5);
+	// },
 	updated() {
-		console.log('updated', 6);
+		console.log('Updated', this);
+		// console.log('updated', 6);
 	},
-	beforeDestroy() {
-		console.log('beforeDestroy', 7);
-	},
-	destroyed() {
-		console.log('destroyed', 8);
-	},
+	// beforeDestroy() {
+	// 	console.log('beforeDestroy', 7);
+	// },
+	// destroyed() {
+	// 	console.log('destroyed', 8);
+	// },
 };
 </script>
