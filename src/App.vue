@@ -3,6 +3,7 @@
 		<div class="link-wrapper">
 			<router-link to="/">Home</router-link>
 			<router-link to="/test">Test Component</router-link>
+      <router-link to="/clock">Clock Component</router-link>
 		</div>
 		<router-view></router-view>
 	</div>

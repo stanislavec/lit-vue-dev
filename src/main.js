@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Test from './components/Test.vue'
+import ClockComponent from './components/Clock'
 import './global.css'
 
 Vue.config.productionTip = false
@@ -10,7 +11,8 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/', component: HelloWorld },
-  { path: '/test', component: Test }
+  { path: '/test', component: Test },
+  {path: '/time', component: ClockComponent}
 ]
 
 const router = new VueRouter({
