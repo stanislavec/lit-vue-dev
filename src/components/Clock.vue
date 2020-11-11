@@ -1,5 +1,6 @@
 <template>
   <div class="clockWrapper">
+    <p @click="onClick">{{title}}</p>
     <span>{{formattedTime}}</span>
   </div>
 </template>
@@ -9,6 +10,7 @@ import dayjs from 'dayjs';
 
 export default {
   name: "ClockComponent",
+  props: ['title', 'onClick'],
   data() {
       return {
         clockId: '',

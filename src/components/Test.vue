@@ -4,13 +4,17 @@
 		<div>{{ clickedTimes }}</div>
 		<button @click="clickCount()">Посчитать клики</button>
 		<br />
+    <ClockComponent title="My Clock Title" :onClick="catchClick"/>
 		<router-link to="/">Go home</router-link>
 	</div>
 </template>
 
 <script>
+import ClockComponent from './Clock';
+
 export default {
 	name: 'Test',
+  components: {ClockComponent},
 	data() {
 		return {
 			text: 'Main Title',
@@ -38,6 +42,9 @@ export default {
 		clickCount() {
 			return (this.click += 1);
 		},
+    catchClick() {
+      console.log('Clicked')
+    }
 	},
 	// beforeCreate() {
 	// 	console.log('beforeCreate', 1);
