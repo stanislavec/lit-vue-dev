@@ -1,0 +1,16 @@
+{
+  "name": "express-bare-bones",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "NODE_ENV=development LOGGING_LEVEL=debug nodemon npm start"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "ejs": "^3.1.5",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "winston": "^2.4.0"
+  }
+}
